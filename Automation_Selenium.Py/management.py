@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 
 import time
@@ -47,18 +48,20 @@ try:
     time.sleep(1)
 
     # Handle the Google Login Pop-up
-    WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(2))
+    WebDriverWait(driver, 20).until(EC.number_of_windows_to_be(2))
     driver.switch_to.window(driver.window_handles[1])  
     print("Step 7: Switched to Google login window.")
-    time.sleep(1)
-    email_field = WebDriverWait(driver, 10).until(
+    time.sleep(8)
+    email_field = WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH, "//input[@type='email']"))
     )
     email_field.send_keys("guna.palani@fssa.freshworks.com")  
     email_field.send_keys(Keys.ENTER)
     print("Step 8: Entered email address and submitted.")
+    time.sleep(90)
+    
     driver.switch_to.window(driver.window_handles[0])
-    time.sleep(50)
+    
     expend=WebDriverWait(driver,10).until(
         EC.element_to_be_clickable((By.XPATH,"//*[@id='setting']/a/i"))
     )
@@ -95,9 +98,108 @@ try:
     button=driver.find_element(By.ID,"confirmNewMember")
     button.click()
     print("step 10: submitted succesfully")
-    time.sleep(12)
+    time.sleep(9)
+
+    #-------Edit member---------
+    edit_icon=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button")
+    edit_icon.click()
+    time.sleep(1)
+    edit_drop=driver.find_element(By.XPATH,"//*[@id='editMemberRole']")
+    edit_drop.click()
+    time.sleep(1)
+
+    edit_role=driver.find_element(By.XPATH,"//*[@id='forEditRole']/div/a[2]")
+    edit_role.click()
+    time.sleep(1)
+    edit_mem=driver.find_element(By.ID,"editMemberClass")
+    edit_mem.click()
+    time.sleep(1)
+    edit_class=driver.find_element(By.XPATH,"//*[@id='forEditClass']/div/a[2]")
+    edit_class.click()
+    time.sleep(1)
+    edit_submit=driver.find_element(By.ID,"confirmEditMemberData")
+    edit_submit.click()
+    time.sleep(9)
+    #repeat loop
+    edit_ico=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button") 
+    edit_ico.click()
+    time.sleep(2)
+    classC=driver.find_element(By.XPATH,"//*[@id='forEditClass']/div/a[3]")
+    classC.click()
+    time.sleep(3)
+    edit_submit=driver.find_element(By.ID,"confirmEditMemberData")
+    edit_submit.click()
+    time.sleep(9)
+    edit_ic=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button") 
+    edit_ic.click()
+    time.sleep(2)
+    edit_dro=driver.find_element(By.XPATH,"//*[@id='editMemberRole']")
+    edit_dro.click()
+    time.sleep(1)
+
+    edit_role=driver.find_element(By.XPATH,"//*[@id='forEditRole']/div/a[3]")
+    edit_role.click()
+    time.sleep(1)
+    edit_submit=driver.find_element(By.ID,"confirmEditMemberData")
+    edit_submit.click()
+    time.sleep(10)
+
+    #Add management
+    edit_icon=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button") 
+    edit_icon.click()
+    time.sleep(2)
+    edit_drop=driver.find_element(By.XPATH,"//*[@id='editMemberRole']")
+    edit_drop.click()
+    time.sleep(1)
+
+    edit_role=driver.find_element(By.XPATH,"//*[@id='forEditRole']/div/a[4]")
+    edit_role.click()
+    time.sleep(1)
+    edit_submit=driver.find_element(By.ID,"confirmEditMemberData")
+    edit_submit.click()
+    time.sleep(10)
+
+    #check cancel functionality
+    edit_icon=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button") 
+    edit_icon.click()
+    time.sleep(2)
+    edit_drop=driver.find_element(By.XPATH,"//*[@id='editMemberRole']")
+    edit_drop.click()
+    time.sleep(1)
+
+    edit_role=driver.find_element(By.XPATH,"//*[@id='forEditRole']/div/a[2]")
+    edit_role.click()
+    time.sleep(1)
+    edit_submit=driver.find_element(By.ID,"cancelEditMemberData")
+    edit_submit.click()
+    time.sleep(10)
+
+    #remove member functionality
+    edit_icon=driver.find_element(By.XPATH,"//*[@id='membersList']/div[5]/div[2]/button") 
+    edit_icon.click()
+    time.sleep(2)
+    target_element = driver.find_element(By.ID, "changeProfileButton")
+
+    # Create an ActionChains object
+    actions = ActionChains(driver)
+
+    # Perform the hover action
+    actions.move_to_element(target_element).perform()
+    time.sleep(3)
+
+    
 
 
+
+
+
+
+
+
+
+
+
+    
 
 
 except Exception as e:

@@ -20,15 +20,14 @@ try:
     sign_in_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//*[@id='sign-in-button']/span"))
     )
-    actions.double_click(sign_in_button).perform()
+    #actions.double_click(sign_in_button).perform()
 
-    # sign_in_button.click()
+    sign_in_button.click()
     print("Step 2: Clicked on 'Sign In' button.")
 
     
     print("Waiting for sign-in to complete. Please sign in manually if prompted...")
     time.sleep(9)  
-
     
     driver.execute_script("window.open('https://fssamanagement.netlify.app/', '_blank');")
     print("Step 3: Opened a new window with the specified website.")
@@ -100,85 +99,6 @@ try:
     print("step 10: submitted successfully")
     time.sleep(15)
     location="//*[@id='membersList']/div[5]/div[2]/button"
-    
-
-    # # Edit Member
-    # location = "//*[@id='membersList']/div[5]/div[2]/button"
-    # edit_icon = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, location))
-    # )
-    # edit_icon.click()
-    # print("Step 11: Edit member functionality accessed")
-
-    # edit_drop = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='editMemberRole']"))
-    # )
-    # edit_drop.click()
-    # edit_role = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='forEditRole']/div/a[2]"))
-    # )
-    # edit_role.click()
-
-    # # Submit Changes
-    # edit_submit = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.ID, "confirmEditMemberData"))
-    # )
-    # edit_submit.click()
-    # print("Step 12: Member role updated successfully")
-
-    # # Repeat actions
-    # edit_icon = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, location))
-    # )
-    # edit_icon.click()
-    # classC = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='editMemberRole']"))
-    # )
-    # classC.click()
-    # edit_submit.click()
-    # print("Step 13: Promoted to head coach")
-
-    # # Add Management
-    # edit_icon = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, location))
-    # )
-    # edit_icon.click()
-    # edit_roles = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='forEditRole']/div/a[4]"))
-    # )
-    # edit_roles.click()
-    # edit_submit = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.ID, "confirmEditMemberData"))
-    # )
-    # edit_submit.click()
-    # print("Step 14: Promoted to admin")
-
-    # # Check Cancel Functionality
-    # edit_icon = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, location))
-    # )
-    # edit_icon.click()
-    # edit_role = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='forEditRole']/div/a[2]"))
-    # )
-    # edit_role.click()
-    # cancel_button = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.ID, "cancelEditMemberData"))
-    # )
-    # cancel_button.click()
-    # print("Step 15: Cancel functionality verified")
-
-    # # Remove Member
-    # delete_member = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.XPATH, "//*[@id='deleteMember']"))
-    # )
-    # delete_member.click()
-    # confirm_delete = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.ID, "deleteYes"))
-    # )
-    # confirm_delete.click()
-    # print("Step 16: Member removed successfully")
-
 
     #-------Edit member---------
     edit_icon=driver.find_element(By.XPATH,location)
@@ -206,7 +126,7 @@ try:
     edit_ico=driver.find_element(By.XPATH,location) 
     edit_ico.click()
     time.sleep(8)
-    classC=driver.find_element(By.XPATH,'//*[@id="editMemberRole"]')
+    classC=driver.find_element(By.ID,"editMemberClass")
     classC.click()
     time.sleep(4)
     class_sec=driver.find_element(By.XPATH,"//*[@id='forEditClass']/div/a[3]")
@@ -268,11 +188,6 @@ try:
     edit_on.click()
     time.sleep(2)
     target_element = driver.find_element(By.ID, "changeProfileButton")
-
-    # Create an ActionChains object
-    # actions = ActionChains(driver)
-
-    # Perform the hover action
     actions.move_to_element(target_element).perform()
     time.sleep(5)
     element = driver.find_element(By.XPATH, "//*[@id='showMembers']/p")
@@ -284,25 +199,17 @@ try:
     dele = driver.find_element(By.XPATH,' //*[@id="deleteMember"]')
     actions.move_to_element(dele).perform()
     time.sleep(4)
-    role = driver.find_element(By.XPATH,"//*[@id='forEditRole']/div/a[4]")
-    actions.move_to_element(role).perform()
-    time.sleep(4)
-    class_d = driver.find_element(By.XPATH,"//*[@id='forEditClass']/div/a[3]")
-    actions.move_to_element(class_d).perform()
-    time.sleep(4)
-    can = driver.find_element(By.ID,"cancelEditMemberData")
-    actions.move_to_element(can).perform()
-    time.sleep(2)
-    data = driver.find_element(By.ID,"confirmEditMemberData")
-    actions.move_to_element(data).perform()
-    time.sleep(2)
     edit_s=driver.find_element(By.XPATH,' //*[@id="deleteMember"]')
     edit_s.click()
-    time.sleep(1)
+    print('deletebutton clicked successfully')
+    time.sleep(5)
     check=driver.find_element(By.ID,"deleteYes")
     check.click()
+    print('step 16: delete member successfully')
     time.sleep(10)
-
+    extend=driver.find_element(By.XPATH,'//*[@id="sidebar"]/div/div/button/i')
+    extend.click()
+    time.sleep(3)
 except Exception as e:
     print("An error occurred:", e)
 

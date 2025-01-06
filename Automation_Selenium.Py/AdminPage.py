@@ -61,6 +61,7 @@ try:
     wait_and_click(driver, (By.XPATH, "//span[text()='Next']"))
     print("Step 5: Google login completed.")
     driver.switch_to.window(new_window)
+    time.sleep(5)
 
     # Step 6: Open the Admin page
     wait_and_click(driver, (By.XPATH, "//*[@id='setting']/a/i"))
@@ -96,7 +97,7 @@ try:
     print('step 10: home page clicked successfully')
     # time.sleep(5)
 
-    #choose class functionality
+    # #choose class functionality
     wait_and_click(driver,(By.ID,'changeClass'))
     wait_and_click(driver,(By.XPATH,'//*[@id="showClassesForLead"]/div[2]/button[2]'))
     print('step 11: Choose B class successfully')
@@ -116,7 +117,7 @@ try:
     print('step 13: New month clicked successfully')
     # time.sleep(4)
 
-    wait_and_send_keys(driver, (By.ID, "newMonth"), "February 2025")
+    wait_and_send_keys(driver, (By.ID, "newMonth"), "February ")
     wait_and_click(driver,(By.ID,'confirm'))
     driver.refresh()
     # time.sleep(10)
@@ -130,32 +131,36 @@ try:
     time.sleep(10)
 
     wait_and_click(driver,(By.XPATH,'//*[@id="infoLogo"]/i'))
-    time.sleep(12)
+    time.sleep(2)
     wait_and_click(driver,(By.XPATH,'//*[@id="closePopupBtnForCount"]'))
     print('closePup up button successfully')
-
-    # element=wait_and_click(driver,(By.XPATH,'//*[@id="attendanceTable"]/div[1]/div/div/div/table/tbody/tr[1]/td[4]'))
-    # actions = ActionChains(driver)
-    # actions.double_click(element).perform()
-    # print("Double-click performed successfully.")
-
-    # wait=wait_and_click(driver,(By.XPATH,'//*[@id="attendanceTable"]/div[6]/textarea'))
+    time.sleep(2)
 
 
-   
-    # dropdown=Select(wait)
-    # dropdown.select_by_index(1)
-    # time.sleep(10)
+    ''' -------------------------- Marked Present--------------------------------'''
 
-    # wait_and_click(driver,(By.XPATH,'//*[@id="ht_73c422c5d49fcca3"]/div[1]/div/div/div/table/tbody/tr[1]/td'))
-    # print('keys entered successfully')
-    # time.sleep(10)
+    # wait_and_click(driver,(By.CSS_SELECTOR,'#attendanceTable > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)'))
+    # print('clear one')
+    
+    
+    # wait_and_click(driver,(By.CSS_SELECTOR,'#attendanceTable > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td.htAutocomplete.current.highlight > div'))
+    # print('clear two')
 
+    # wait_and_click(driver,(By.XPATH,'//*[@id="ht_19420afc3bb6c653"]/div[1]/div/div/div/table/tbody/tr[1]/td'))
+    actions = ActionChains(driver)
+    element=wait_and_click(driver,(By.CSS_SELECTOR,'#attendanceTable > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)'))
+    
+    actions.context_click(element).perform()  
+    time.sleep(2)
+    print("Right-click performed successfully.")
+    time.sleep(2)
+    wait_and_click(driver,(By.CSS_SELECTOR,'#ht_a4be0837cf70b9b3 > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td > div'))
+    wait_and_send_keys(driver,(By.XPATH,'//*[@id="newHoliday"]','Heavy Rain'))
+    wait_and_click(driver,(By.ID,'id="confirmHoliday"'))
+    print('all correct')
+    time.sleep(4)
+    
 
-
-
-
- 
 
     
    

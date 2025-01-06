@@ -20,18 +20,12 @@ try:
     sign_in_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//*[@id='sign-in-button']/span"))
     )
-    #actions.double_click(sign_in_button).perform()
-
     sign_in_button.click()
     print("Step 2: Clicked on 'Sign In' button.")
-
-    
     print("Waiting for sign-in to complete. Please sign in manually if prompted...")
-    time.sleep(9)  
-    
+    time.sleep(9)   
     driver.execute_script("window.open('https://fssamanagement.netlify.app/', '_blank');")
     print("Step 3: Opened a new window with the specified website.")
-
     old_window = driver.current_window_handle
     new_window = driver.window_handles[-1]
     driver.switch_to.window(old_window)
@@ -59,7 +53,7 @@ try:
     email_field.send_keys("guna.palani@fssa.freshworks.com")  
     email_field.send_keys(Keys.ENTER)
     print("Step 8: Entered email address and submitted.")
-    time.sleep(90)
+    time.sleep(30)
     
     driver.switch_to.window(driver.window_handles[0])
     

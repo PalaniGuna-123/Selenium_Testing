@@ -60,7 +60,7 @@ try:
     select_dropdown_option(driver,(By.XPATH,'//*[@id="genreFilter"]/option[4]'),(By.XPATH,'//*[@id="genreFilter"]/option[1]'))
     time.sleep(3)
     print("Step 5: Select genre options from the dropdown multiple times.")
-    wait_and_send_keys(driver,(By.XPATH,"//input[@id='searchBox']"),"Vijay Antony")
+    wait_and_send_keys(driver,(By.XPATH,"//input[@id='searchBox']"),"Rockstar")
     
     wait_and_click(driver,(By.XPATH,"//button[@id='searchBtn']"))
     time.sleep(3)
@@ -94,16 +94,16 @@ try:
     driver.execute_script("window.scrollBy(0, 500);")
     print("Scrolled down by 1000 pixels")
     time.sleep(1)
-    # wait_and_click(driver,(By.XPATH,"//button[@id='confirmPayment']"))
-    # time.sleep(8)
-    # alert = driver.switch_to.alert
+    wait_and_click(driver,(By.XPATH,"//button[@id='confirmPayment']"))
+    time.sleep(8)
+    alert = driver.switch_to.alert
 
 
-    # print("Alert text:", alert.text)
+    print("Alert text:", alert.text)
 
-    # # Accept the alert (click OK)
-    # alert.accept()
-    # time.sleep(7)
+    # Accept the alert (click OK)
+    alert.accept()
+    time.sleep(7)
     wait_and_click(driver,(By.XPATH,"//a[normalize-space()='My Tickets']"))
     time.sleep(3)
     driver.execute_script("window.scrollBy(0, 400);")

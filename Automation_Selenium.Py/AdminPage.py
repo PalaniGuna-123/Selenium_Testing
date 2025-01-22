@@ -63,7 +63,7 @@ try:
     driver.switch_to.window(new_window)
     time.sleep(5)
 
-    # Step 6: Open the Admin page
+    #Step 6: Open the Admin page
     wait_and_click(driver, (By.XPATH, "//*[@id='setting']/a/i"))
     print("Step 6: Opened Admin page.")
 
@@ -77,7 +77,7 @@ try:
     print("Step 7: Added a new member successfully.")
 
     # Step 8: Edit member details
-    member_xpath = "//*[@id='membersList']/div[5]/div[2]/button/i"
+    member_xpath = "//*[@id='membersList']/div[4]/div[2]/button/i"
     wait_and_click(driver, (By.XPATH, member_xpath))
     select_dropdown_option(driver, (By.XPATH, "//*[@id='editMemberRole']"), (By.XPATH, "//*[@id='forEditRole']/div/a[2]"))
     select_dropdown_option(driver, (By.ID, "editMemberClass"), (By.XPATH, "//*[@id='forEditClass']/div/a[2]"))
@@ -147,16 +147,80 @@ try:
     # print('clear two')
 
     # wait_and_click(driver,(By.XPATH,'//*[@id="ht_19420afc3bb6c653"]/div[1]/div/div/div/table/tbody/tr[1]/td'))
-    actions = ActionChains(driver)
-    element=wait_and_click(driver,(By.CSS_SELECTOR,'#attendanceTable > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)'))
+    # actions = ActionChains(driver)
+    # element=wait_and_click(driver,(By.XPATH,'//*[@id="attendanceTable"]/div[2]/div/div/div/table/thead/tr/th[5]/div'))
+    # actions.double_click(element).perform()
+    # time.sleep(5)
+    # actions.context_click(element).perform()  
+    # time.sleep(2)
+    # print("Right-click performed successfully.")
+    # actions.send_keys(Keys.ARROW_DOWN).send_keys(Keys.ENTER).perform()
+    # time.sleep(2)
+
+    wait_and_click(driver,(By.XPATH,"//button[@id='remarksShow']"))
+    print("step 16 : Remarks option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//span[@id='closePopupBtnForRemarks']"))
+    print("step 17 : Remarks option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//button[@id='holidaysShow']"))
+    print("step 17 : Holiday option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//span[@id='closePopupBtnForHoliday']"))
+    print("step 18 : Remarks option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//button[@id='save']"))
+    print("step 19 : save option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//button[@id='countBtn']"))
+    print("step 20 : count option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//span[@id='closePopupBtn']"))
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//button[@id='dailyCount']"))
+
+    print("step 21 : count option clicked successfully")
+    time.sleep(1)
+    wait_and_click(driver,(By.XPATH,"//span[@id='closePopupBtnForDaily']"))
+
+    print("step 22 : count option clicked successfully")
+    time.sleep(1)
+
+
+
+
+    wait_and_click(driver,(By.XPATH,"//i[@class='lni lni-book']"))
+
+    print("step 23 : click class option clicked successfully")
+    time.sleep(1)
     
-    actions.context_click(element).perform()  
-    time.sleep(2)
-    print("Right-click performed successfully.")
-    time.sleep(2)
-    wait_and_click(driver,(By.CSS_SELECTOR,'#ht_a4be0837cf70b9b3 > div.ht_master.handsontable > div > div > div > table > tbody > tr:nth-child(1) > td > div'))
-    wait_and_send_keys(driver,(By.XPATH,'//*[@id="newHoliday"]','Heavy Rain'))
-    wait_and_click(driver,(By.ID,'id="confirmHoliday"'))
+    wait_and_click(driver,(By.XPATH,"//a[@id='english']"))
+
+    print("step 24 : click English option clicked successfully")
+    time.sleep(1)
+
+    
+    wait_and_click(driver,(By.XPATH,"//p[normalize-space()='February 2025']"))
+
+    print("step 24 : click Feb clicked successfully")
+    time.sleep(3)
+    
+    wait_and_click(driver,(By.XPATH,"//button[@id='newTest']"))
+
+    print("step 25 : New Test clicked successfully")
+    time.sleep(5)
+
+    wait_and_send_keys(driver,(By.XPATH,"//input[@id='datasetName']"),"Communication English")
+    wait_and_send_keys(driver,(By.XPATH,"//input[@id='totalMarks']"),100)
+    time.sleep(6)
+
+    wait_and_click(driver,(By.XPATH,'//*[@id="closeBtnForNewMark"]'))
+    time.sleep(1)
+    
+
+  
+ 
+
     print('all correct')
     time.sleep(4)
     

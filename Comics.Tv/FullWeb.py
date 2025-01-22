@@ -37,27 +37,27 @@ def select_dropdown_option(driver, dropdown_locator, option_locator, timeout=15)
 driver = webdriver.Chrome()
 
 try:
-    url = 'http://localhost:4000/'
+    url = 'http://localhost:4000'
     driver.get(url)
     driver.maximize_window()
     time.sleep(3)
     element_to_hover = driver.find_element(By.XPATH, "//input[@id='search-bar']")
     actions = ActionChains(driver)
     actions.move_to_element(element_to_hover).perform()
-    time.sleep(8)
+    time.sleep(2)
     driver.execute_script("window.scrollBy(0, 1000);")
     print("Scrolled down by 1000 pixels")
     wait_and_click(driver,(By.XPATH,"//div[10]//button[1]"))
-    time.sleep(4)
+    time.sleep(2)
     wait_and_click(driver,(By.XPATH,'/html/body/div/div/div[6]/button[1]'))
 
 
-    time.sleep(3)
+    time.sleep(2)
     driver.execute_script("window.scrollBy(0, -2000);")
     print("Scrolled up by 1000 pixels")
     time.sleep(2)
     wait_and_click(driver,(By.XPATH,"//div[2]//button[1]"))
-    time.sleep(4)
+    time.sleep(2)
     wait_and_click(driver,(By.XPATH,'/html/body/div/div/div[6]/button[1]'))
 
 
@@ -185,12 +185,13 @@ try:
     time.sleep(1)
     wait_and_click(driver,(By.XPATH,"//video[@id='video']"))
   
-    time.sleep(90)
+    time.sleep(50)
     wait_and_click(driver,(By.XPATH,"//video[@id='video']"))
     time.sleep(4)
 
 
     wait_and_click(driver,(By.XPATH,"//a[normalize-space()='HOME']"))
+    
     time.sleep(1)
     driver.save_screenshot("screenshot.png")
 

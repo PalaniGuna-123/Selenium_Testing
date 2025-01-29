@@ -37,11 +37,16 @@ try:
 
     # Corrected: Pass locator as a tuple
     wait_and_click(driver, (By.XPATH, '//*[@id="hamburger"]')) 
+    time.sleep(2)
     wait_and_click(driver, (By.XPATH, '//*[@id="loginLink"]'))  
     print("Step 2: Click the hamburger menu and go to the login page.")
     time.sleep(2)
     wait_and_send_keys(driver,(By.XPATH,'//*[@id="email"]'),"sridharsridhar34254@gmail.com")
+    time.sleep(1)
+
     wait_and_send_keys(driver,(By.XPATH,'//*[@id="password"]'),"Guna@?2004")
+    time.sleep(1)
+
     wait_and_click(driver,(By.XPATH,'//*[@id="login-form"]/button'))
     print("Step 3: Enter login credentials (email and password).")
     time.sleep(2)

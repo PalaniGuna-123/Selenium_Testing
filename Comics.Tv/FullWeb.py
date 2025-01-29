@@ -44,13 +44,14 @@ try:
     element_to_hover = driver.find_element(By.XPATH, "//input[@id='search-bar']")
     actions = ActionChains(driver)
     actions.move_to_element(element_to_hover).perform()
+    print("step 1: search bar hovered successfully")
     time.sleep(2)
     driver.execute_script("window.scrollBy(0, 1000);")
     print("Scrolled down by 1000 pixels")
     wait_and_click(driver,(By.XPATH,"//div[10]//button[1]"))
     time.sleep(2)
     wait_and_click(driver,(By.XPATH,'/html/body/div/div/div[6]/button[1]'))
-
+    print("step 2: click watch list")
 
     time.sleep(2)
     driver.execute_script("window.scrollBy(0, -2000);")
@@ -192,7 +193,7 @@ try:
 
     wait_and_click(driver,(By.XPATH,"//a[normalize-space()='HOME']"))
     
-    time.sleep(1)
+    time.sleep(3)
     driver.save_screenshot("screenshot.png")
 
 

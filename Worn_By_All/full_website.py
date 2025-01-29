@@ -51,7 +51,7 @@ try:
     # wait_and_click(driver,(By.XPATH,"//button[normalize-space()='Login']"))
     # time.sleep(1)
     wait_and_send_keys(driver,(By.XPATH,"//input[@id='signup-username']"),"Alex")
-    wait_and_send_keys(driver,(By.XPATH,"//input[@id='signup-email']"),"guna1234@gmail.com")
+    wait_and_send_keys(driver,(By.XPATH,"//input[@id='signup-email']"),"guna1117734@gmail.com")
     time.sleep(1)
 
     wait_and_send_keys(driver,(By.XPATH,"//input[@id='signup-password']"),"Guna@?2004")

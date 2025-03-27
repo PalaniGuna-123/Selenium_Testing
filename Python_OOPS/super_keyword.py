@@ -1,4 +1,4 @@
-class Rectangle():
+class Rectangle:
     def __init__(self,length,width,height):
         self.length=length
         self.width=width
@@ -21,3 +21,11 @@ square = Square(3,3)
 cube = Cube(3,3,3)
 print(square.area())
 print(cube.volume())
+
+class Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+P=Person("Guna",19)
+print(P.name, P.age)    

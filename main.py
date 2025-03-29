@@ -51,6 +51,7 @@ if __name__ == "__main__":
         jacket_page.select_option_from_dropdown()
         cart_page.add_all_items_to_cart()
         scroll.scroll_by_1000px()
+        
         review.review_details()
         review.fill_review_form()
         print("Test completed successfully.")

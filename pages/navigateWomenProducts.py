@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 class WomenPage:
     def __init__(self, driver: webdriver.Chrome):
         self.driver = driver
-        self.WOMEN_MENU_ITEM = (By.XPATH, "//a[contains(text(),'Women')]")
-        self.JACKETS_LINK = (By.XPATH, "//a[contains(text(),'Jackets')]")
+        self.WOMEN_MENU_ITEM = (By.XPATH, '//*[@id="ui-id-3"]/span')
+        self.JACKETS_LINK = (By.XPATH, "//main[@id='maincontent']//ul[1]//li[2]//a[1]")
 
     def go_to_jackets_page(self):
         self.driver.find_element(*self.WOMEN_MENU_ITEM).click()

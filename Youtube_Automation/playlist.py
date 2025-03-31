@@ -8,20 +8,12 @@ api_key = 'AIzaSyABR31tDQqrWVr_DYGxlcGPbFusssTE2AU'
 api = Api(api_key=api_key)
 channel_id = 'UCqzAd8jK6pAyQqjWCroa_BQ'
 channel_info = api.get_channel_info(channel_id=channel_id)
-print(channel_info.items[0].to_dict())
-
-# channel_data = channel_info.items[0].to_dict()
-# print('channel name: ',channel_data['snippet']['title'])
-# print('view count: ',channel_data['statistics']['viewCount'])
-# print('channel description: ',channel_data['snippet']['description'])
-# print('subscriber count: ',channel_data['statistics']['subscriberCount'])
-# print('custome url: ',channel_data['snippet']['customUrl'])
-# print('Video count: ',channel_data['statistics']['videoCount'])
+# print(channel_info.items[0].to_dict())
 
 playlist_info = api.get_playlists(channel_id=channel_id)
-playlist_info.items[1].to_dict()
-playlist_info.items[1].id
-playlist_info.items.__len__()
+# playlist_info.items[1].to_dict()
+# playlist_info.items[1].id
+# playlist_info.items.__len__()
 for i in range(0,playlist_info.items.__len__()):
  playlist_info_byID = api.get_playlist_by_id(playlist_id=playlist_info.items[i].id)
  # playlist_info_byID.items[0].to_dict()

@@ -10,7 +10,7 @@
 
 import pywhatkit
 
-phone = input('Enter the phone number (with country code, e.g., +1 or +91): ')
+phone = input('Enter the phone number with countrycode ')
 image_path = r"C:\Selenium_Testing\screenshot.png"
 
 # No caption, using empty string

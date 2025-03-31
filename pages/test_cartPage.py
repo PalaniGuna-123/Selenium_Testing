@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -15,11 +16,13 @@ class CartPage:
         for i in range(times):
             self.driver.find_element(*self.CHANGE_IMAGE).click()
             print(f"Changed image {i + 1} times.")
+            assert self.driver.find_element(*self.CHANGE_IMAGE), "Image change failed"
 
     def select_size(self, size_id):
         size_xpath = (By.XPATH, f"{self.SIZE_XPATH_BASE}{size_id}']")
         self.driver.find_element(*size_xpath).click()
         print(f"Selected size with ID: {size_id}")
+        assert self.driver.find_element(*size_xpath).is_selected() == False, f"Failed to select size {size_id}"
 
     def select_multiple_sizes(self):
         sizes = [166, 167, 168, 169, 170]
@@ -30,6 +33,7 @@ class CartPage:
         color_xpath = (By.XPATH, f"{self.COLOR_XPATH_BASE}{color_id}']")
         self.driver.find_element(*color_xpath).click()
         print(f"Selected color with ID: {color_id}")
+        assert self.driver.find_element(*color_xpath).is_selected() == False, f"Failed to select color {color_id}"
 
     def select_multiple_colors(self):
         colors = [56, 58, 59]
@@ -38,10 +42,16 @@ class CartPage:
 
     def add_all_items_to_cart(self):
         self.driver.find_element(*self.ITEMS_XPATH).click()
+        assert self.driver.find_element(*self.ITEMS_XPATH), "Failed to click on item"
+
         self.change_image_multiple_times()
         self.select_multiple_sizes()
         self.select_multiple_colors()
+
         self.driver.find_element(*self.QUANTITY).clear()
         self.driver.find_element(*self.QUANTITY).send_keys('11')
+        assert self.driver.find_element(*self.QUANTITY).get_attribute('value') == '11', "Failed to set quantity to 11"
+
         self.driver.find_element(*self.ADD_TO_COMPARE).click()
         print("Added all items to compare.")
+        assert self.driver.find_element(*self.ADD_TO_COMPARE), "Failed to add items to compare"

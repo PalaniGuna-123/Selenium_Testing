@@ -1,0 +1,16 @@
+Date: 31/3/2025
+Time: 16:51
+Phone Number: +917845299043
+Message: hiiiiii
+--------------------
+Date: 31/3/2025
+Time: 16:53
+Phone Number: +916379129773
+Message: hello da sara
+--------------------
+Date: 31/3/2025
+Time: 17:5
+Phone Number: +917845299043
+Image: C:\Selenium_Testing\screenshot.png
+Caption: It is my image automation script
+--------------------

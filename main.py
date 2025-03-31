@@ -9,7 +9,7 @@ from pages.checkOutPage import CheckoutPage
 from pages.logInPage import LogInPage
 from pages.navigateWomenProducts import WomenPage
 from pages.jacketPageDropdown import JacketPage
-from pages.cartPage import CartPage
+from pages.test_cartPage import CartPage
 from pages.scrollControl import ScrollControl
 from pages.reviewPage import ReviewPage
 

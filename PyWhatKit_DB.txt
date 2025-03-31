@@ -43,3 +43,15 @@ Time: 17:31
 Group ID: GiLIGO5AMCP8RJEwNotimo
 Message: Hello squad, have you all filled out the company selection form?
 --------------------
+Date: 31/3/2025
+Time: 17:39
+Group ID: GiLIGO5AMCP8RJEwNotimo
+Image: C:\Selenium_Testing\screenshot.png
+Caption: @pranesh
+--------------------
+Date: 31/3/2025
+Time: 17:40
+Group ID: GiLIGO5AMCP8RJEwNotimo
+Image: C:\Selenium_Testing\screenshot.png
+Caption: @praneshtaker Fssa
+--------------------

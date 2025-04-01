@@ -3,6 +3,7 @@ from LeatherLand_Pages.home import homePage
 from LeatherLand_Pages.logIn import LogInPage
 from LeatherLand_Pages.trending import Trending
 from LeatherLand_Pages.filter import FilterPage
+from LeatherLand_Pages.productDetails import ProductDetails
 
 if __name__ == "__main__":
     driver =webdriver.Chrome()
@@ -11,6 +12,7 @@ if __name__ == "__main__":
         Login_Page=LogInPage(driver)
         Trending_Page=Trending(driver)
         filterPage=FilterPage(driver)
+        stock=ProductDetails(driver)
 
         Land_Home_Page.navigate_to_web()
         Login_Page.go_to_log_in_page()
@@ -19,6 +21,8 @@ if __name__ == "__main__":
         Trending_Page.navigate_shoes()
         filterPage.filter_product()
         filterPage.click_product()
+        stock.change_img_one()
+        stock.change_size()
 
 
     except Exception as e:

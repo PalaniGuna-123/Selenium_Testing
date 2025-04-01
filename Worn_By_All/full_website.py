@@ -79,12 +79,7 @@ try:
     wait_and_click(driver,(By.XPATH,"//a[@href='/pages/html/cartpage']//i[@class='fa-solid fa-cart-shopping']"))
     wait_and_click(driver,(By.XPATH,"//body/main/section[@id='cartItems']/div[2]/div[1]/button[1]"))
     time.sleep(3)
-
-
-
-
-  
-
+    
 except Exception as e:
     print(f"An error occurred: {e}")
 

@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 class LogInPage:
     def __init__(self, driver: webdriver.Chrome):
@@ -20,4 +21,5 @@ class LogInPage:
 
     def field_sign_in(self):
         self.driver.find_element(*self.FIELD_SIGN_IN).click()
+        time.sleep(4)
         print("Sign In successful.")

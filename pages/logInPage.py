@@ -21,5 +21,4 @@ class LogInPage:
 
     def field_sign_in(self):
         self.driver.find_element(*self.FIELD_SIGN_IN).click()
-        time.sleep(4)
         print("Sign In successful.")

@@ -24,3 +24,9 @@ Phone Number: +918667256206
 Image: C:\Selenium_Testing\screenshot.png
 Caption: This is pranesh comics tv
 --------------------
+Date: 2/4/2025
+Time: 11:32
+Phone Number: +918072565470
+Image: C:\Selenium_Testing\Email_Automation\Resume.png
+Caption: This is pranesh comics tv
+--------------------

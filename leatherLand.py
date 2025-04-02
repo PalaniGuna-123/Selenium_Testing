@@ -51,7 +51,7 @@ if __name__ == "__main__":
         card_details.fill_card_details()
         scroll.scroll_by_1000px()
         card_details.proceed_to_pay()
-        Go_to_My_Home.go_home()
+        # Go_to_My_Home.go_home()
 
 
     except Exception as e:

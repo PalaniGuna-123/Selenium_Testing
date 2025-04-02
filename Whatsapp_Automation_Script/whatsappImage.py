@@ -10,10 +10,10 @@
 
 import pywhatkit
 
-phone = input('Enter the phone number with countrycode ')
-image_path = r"C:\Selenium_Testing\screenshot.png"
+phone = input('Enter the phone number with countrycode : ')
+image_path = r"C:\Selenium_Testing\Email_Automation\Resume.png"
 
 # No caption, using empty string
-pywhatkit.sendwhats_image(phone, image_path, "This is pranesh comics tv", 20, True, 20)
+pywhatkit.sendwhats_image(phone, image_path, "This is Guna Resume ", 20, True, 20)
 
 print("Image sent successfully!")

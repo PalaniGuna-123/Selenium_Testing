@@ -19,7 +19,7 @@ data = {
     "description": "This ticket is created via API request.",
     "email": "user@example.com",
     "priority": 2,
-    "status": 2
+    "status": 1
 }
 
 response = requests.post(url, auth=(api_key, "X"), headers=headers, data=json.dumps(data))
@@ -29,4 +29,4 @@ if response.status_code == 201:
     print("Ticket Created Successfully!")
     print(response.json())
 else:
-    print(f"Error: {response.status_code} - {response.text}")
+    print("error",response.json())

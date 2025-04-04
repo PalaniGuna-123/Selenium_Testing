@@ -8,7 +8,7 @@ class ScrollControl:
     def scroll_by_1000px(self):
         if self.driver:
             time.sleep(2)  
-            self.driver.execute_script("window.scrollBy(0, 10000);")
-            print('Scrolled down 1000px')
+            self.driver.execute_script("window.scrollBy(1000, 1000);")
+            print('Scrolled down 10000px')
         else:
             print("Driver is undefined. Cannot scroll.")
